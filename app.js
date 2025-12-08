@@ -134,30 +134,37 @@ async function loadProducts(initialArea) {
     productsGrid.innerHTML = '<p id="loading-message">Cargando productos...</p>';
 
     try {
-        // 🚨 RUTA CORREGIDA: pag (Colección) > mmmm (Documento) > productos (Subcolección)
-        const snapshot = await db.collection("pag").doc("mmmm").collection("productos").get();
+        const snapshot = await db
+            .collection("artefactos").doc("euforia")
+            .collection("pag").doc("mmmm")
+            .collection("productos")
+            .get();
         
         allProducts = snapshot.docs.map(doc => {
             const data = doc.data();
             return {
                 id: doc.id,
-                name: data.name, 
-                price: data.price || 0, 
-                imageUrl: data.imageUrl, 
-                area: data.area || 'Otros' 
+                name: data.name,
+                price: data.price || 0,
+                imageUrl: data.imageUrl,
+                area: data.area || 'Otros'
             };
         });
-        
-        console.log(`✅ Productos cargados: ${allProducts.length} documentos.`);
-        console.log(`🔍 Filtrando por área inicial: ${initialArea}`);
-        
-        filterAndRenderProducts(initialArea); 
+
+        console.log("Productos cargados:", allProducts);
+
+        if (allProducts.length === 0) {
+            productsGrid.innerHTML = '<p class="error-message">Error: 0 Productos encontrados. (Verifica Reglas y datos)</p>';
+        } else {
+            filterAndRenderProducts(initialArea);
+        }
 
     } catch (error) {
         console.error("⛔ Error CRÍTICO en loadProducts:", error);
-        productsGrid.innerHTML = '<p class="error-message">Error al cargar productos. Revisa la consola y las Reglas de Seguridad de Firestore.</p>';
+        productsGrid.innerHTML = '<p class="error-message">Error grave: Revisa la consola para ver si el problema es de permisos.</p>';
     }
 }
+
 
 function filterAndRenderProducts(area) {
     const productsGrid = document.getElementById('product-grid-dynamic');
