@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lula. - Productos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="top-nav">
+            <nav class="categories-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li> 
+                    <li><a href="#" data-area="Skincare">Skincare</a></li>
+                    <li><a href="#" data-area="Makeup">Makeup</a></li>
+                    <li><a href="#" data-area="Ojos">Ojos</a></li>
+                    <li><a href="#" data-area="Cabello">Cabello</a></li>
+                    <li><a href="#" data-area="Brochas">Brochas</a></li>
+                    <li><a href="#" data-area="Tools">Tools</a></li>
+                </ul>
+            </nav>
+            <div class="logo">Lula.</div>
+            <div class="icon-links">
+                <a href="#" class="new-tag">NUEVO</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-regular fa-user"></i></a>
+                <a href="#" id="cart-icon"><i class="fa-solid fa-bag-shopping"></i> (<span id="cart-count">0</span>)</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="products-container">
+        <h2 id="section-title-area" class="section-title">CARGANDO...</h2>
+        <div id="product-grid-dynamic" class="product-grid">
+            <p id="loading-message">Cargando productos...</p>
+        </div>
+    </section>
+    
+    <div id="cart-sidebar" class="cart-sidebar">
+        <button id="close-cart-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
+        <h3>🛒 Tu Carrito</h3>
+        <div id="cart-items-list" class="cart-items-list">
+            </div>
+        <div class="cart-summary">
+            <p>Subtotal: <span id="cart-total">$0</span></p>
+            <button id="whatsapp-order-btn" class="cta-button">Enviar Pedido por WhatsApp</button>
+        </div>
+    </div>
+    
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">Lula.</div>
+            <div class="footer-columns">
+                <div class="column">
+                    <h4>Colecciones</h4>
+                    <ul>
+                        <li><a href="#">Tools</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        <li><a href="#">Makeup</a></li>
+                        <li><a href="#">Brochas</a></li>
+                        <li><a href="#">Cabello</a></li>
+                        <li><a href="#">Skincare</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Legales</h4>
+                    <ul>
+                        <li><a href="#">Políticas de privacidad</a></li>
+                        <li><a href="#">Garantías y devoluciones</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Políticas de envío</a></li>
+                        <li><a href="#">Promos y concursos</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Sobre nosotros</h4>
+                    <p>Visítanos en:</p>
+                    <p>📍 Medellín, C.C. Florida - Local 1240 / Etapa 2.</p>
+                    <p>Somos una marca by **Atenea Profesional.**</p>
+                </div>
+                <div class="column subscribe">
+                    <h4>Suscríbete</h4>
+                    <p>Sé el primero en enterarte de nuestras novedades y descuentos.</p>
+                    <div class="subscribe-form">
+                        <input type="email" placeholder="Email">
+                        <button>ENVIAR →</button>
+                    </div>
+                    <small>Este sitio está protegido por hCaptcha y se aplican la Política de privacidad de hCaptcha y los Términos del servicio.</small>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© Lula Beauty 2025 - Tecnología de Shopify</p>
+        </div>
+    </footer>
+    
+    <script src="app.js"></script>
+</body>
+</html>
