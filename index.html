@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lula. - Tienda de Belleza</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="top-nav">
+            <nav class="categories-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html?area=Skincare" data-area="Skincare">Skincare</a></li>
+                    <li><a href="productos.html?area=Makeup" data-area="Makeup">Makeup</a></li>
+                    <li><a href="productos.html?area=Ojos" data-area="Ojos">Ojos</a></li>
+                    <li><a href="productos.html?area=Cabello" data-area="Cabello">Cabello</a></li>
+                    <li><a href="productos.html?area=Brochas" data-area="Brochas">Brochas</a></li>
+                    <li><a href="productos.html?area=Tools" data-area="Tools">Tools</a></li>
+                </ul>
+            </nav>
+            <div class="logo">Lula.</div>
+            <div class="icon-links">
+                <a href="#" class="new-tag">NUEVO</a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-regular fa-user"></i></a>
+                <a href="productos.html" id="cart-icon"><i class="fa-solid fa-bag-shopping"></i> (<span id="cart-count">0</span>)</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="hero-content">
+            <div class="hero-image-container left">
+                <div class="product-bottles"></div>
+            </div>
+            <div class="hero-image-container center">
+                <div class="model-image"></div>
+            </div>
+            <div class="hero-text-container right">
+                <h1>ESENCIAS DUALES</h1>
+                <p>Fórmulas ligeras de rápida absorción.</p>
+                <a href="productos.html" class="cta-button">VER MÁS</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-showcase">
+        <h2 class="section-title">COMPLETA TU LOOK</h2>
+        <p class="section-subtitle">Mantén la magia de tu cabello, el brillo lo pone Lula ✨</p>
+        
+        <div class="product-grid static-grid">
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('placeholder_corrector.jpg');"></div>
+                <div class="product-info">
+                    <p class="product-name">CORRECTOR LÍQUIDO</p>
+                    <p class="product-price">$15.000</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('placeholder_base.jpg');"></div>
+                <div class="product-info">
+                    <p class="product-name">BASE LÍQUIDA MATE</p>
+                    <p class="product-price">$26.000</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('placeholder_fijador.jpg');"></div>
+                <div class="product-info">
+                    <p class="product-name">Fijador de Maquillaje</p>
+                    <p class="product-price">$18.000</p>
+                </div>
+            </div>
+            <div class="product-card partially-visible">
+                <div class="product-image" style="background-image: url('placeholder_brocha.jpg');"></div>
+                <div class="product-info">
+                    <p class="product-name">Miracle Makeup Bru...</p>
+                    <p class="product-price">Desde $21.000</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-logo">Lula.</div>
+            
+            <div class="footer-columns">
+                <div class="column">
+                    <h4>Colecciones</h4>
+                    <ul>
+                        <li><a href="#">Tools</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        <li><a href="#">Makeup</a></li>
+                        <li><a href="#">Brochas</a></li>
+                        <li><a href="#">Cabello</a></li>
+                        <li><a href="#">Skincare</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Legales</h4>
+                    <ul>
+                        <li><a href="#">Políticas de privacidad</a></li>
+                        <li><a href="#">Garantías y devoluciones</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Políticas de envío</a></li>
+                        <li><a href="#">Promos y concursos</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h4>Sobre nosotros</h4>
+                    <p>Visítanos en:</p>
+                    <p>📍 Medellín, C.C. Florida - Local 1240 / Etapa 2.</p>
+                    <p>Somos una marca by **Atenea Profesional.**</p>
+                </div>
+                <div class="column subscribe">
+                    <h4>Suscríbete</h4>
+                    <p>Sé el primero en enterarte de nuestras novedades y descuentos.</p>
+                    <div class="subscribe-form">
+                        <input type="email" placeholder="Email">
+                        <button>ENVIAR →</button>
+                    </div>
+                    <small>Este sitio está protegido por hCaptcha y se aplican la Política de privacidad de hCaptcha y los Términos del servicio.</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© Lula Beauty 2025 - Tecnología de Shopify</p>
+        </div>
+    </footer>
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    
+    <script src="app.js"></script>
+</body>
+</html>
