@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Euforia - Tienda de Belleza</title>
+    <title>Euforia Boutique - Tienda de Belleza</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
 
     <header class="main-header">
         <div class="top-nav">
             <nav class="categories-nav">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html" class="active-category">Inicio</a></li>
                     <li><a href="rostro.html">Rostro</a></li>
                     <li><a href="ojos.html">Ojos</a></li>
                     <li><a href="labios.html">Labios</a></li>
@@ -28,7 +30,6 @@
             <div class="icon-links">
                 <a href="#" class="new-tag">NUEVO</a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <!-- <a href="#"><i class="fa-regular fa-user"></i></a> -->
                 <a href="productos.html" id="cart-icon">
                     <i class="fa-solid fa-bag-shopping"></i> (<span id="cart-count">0</span>)
                 </a>
@@ -36,62 +37,108 @@
         </div>
     </header>
 
+    <!-- HERO PRINCIPAL -->
     <section class="hero-banner">
         <div class="hero-content">
-            <div class="hero-image-container left">
-                <div class="product-bottles"></div>
+            <div class="hero-image-container">
+                <img src="imgs/banner.png" alt="Colección Euforia" class="hero-img" />
             </div>
-            <div class="hero-image-container center">
-                <div class="model-image"></div>
-            </div>
+
             <div class="hero-text-container right">
-                <h1>ESENCIAS DUALES</h1>
-                <p>Fórmulas ligeras de rápida absorción.</p>
-                <a href="productos.html" class="cta-button">VER MÁS</a>
+                <span class="hero-tagline">Nueva colección · Glow & Fragancias</span>
+                <h1>Esencias duales</h1>
+                <p>Fórmulas ligeras de rápida absorción que cuidan tu piel y llenan de aroma tus momentos favoritos.</p>
+
+                <div class="hero-actions">
+                    <a href="productos.html" class="cta-button">Ver catálogo completo</a>
+                    <a href="lociones.html" class="ghost-button">Lociones y fragancias</a>
+                </div>
+
+                <div class="hero-highlights">
+                    <div class="hero-highlight-item">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span>Texturas cómodas para todo tipo de piel.</span>
+                    </div>
+                    <div class="hero-highlight-item">
+                        <i class="fa-solid fa-gift"></i>
+                        <span>Ideales para detalle y regalo.</span>
+                    </div>
+                    <div class="hero-highlight-item">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <span>Envíos rápidos y seguimiento personalizado.</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- BLOQUE DE CATEGORÍAS DESTACADAS -->
     <section class="product-showcase">
-        <h2 class="section-title">COMPLETA TU LOOK</h2>
-        <p class="section-subtitle">Mantén la magia de tu cabello, el brillo lo pone Euforia ✨</p>
-        
-        <div class="product-grid static-grid">
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('placeholder_corrector.jpg');"></div>
-                <div class="product-info">
-                    <p class="product-name">CORRECTOR LÍQUIDO</p>
-                    <p class="product-price">$15.000</p>
+        <h2 class="section-title">Descubre por categoría</h2>
+        <p class="section-subtitle">Todo lo que necesitas para tu rutina de maquillaje y cuidado, en un solo lugar.</p>
+
+        <div class="home-category-grid">
+            <a href="rostro.html" class="home-category-card">
+                <div class="home-category-icon">
+                    <i class="fa-regular fa-face-smile"></i>
                 </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('placeholder_base.jpg');"></div>
-                <div class="product-info">
-                    <p class="product-name">BASE LÍQUIDA MATE</p>
-                    <p class="product-price">$26.000</p>
+                <h3 class="home-category-title">Rostro</h3>
+                <p class="home-category-text">Bases, correctores, rubores e iluminadores para una piel radiante.</p>
+            </a>
+
+            <a href="ojos.html" class="home-category-card">
+                <div class="home-category-icon">
+                    <i class="fa-regular fa-eye"></i>
                 </div>
-            </div>
-            <div class="product-card">
-                <div class="product-image" style="background-image: url('placeholder_fijador.jpg');"></div>
-                <div class="product-info">
-                    <p class="product-name">Fijador de Maquillaje</p>
-                    <p class="product-price">$18.000</p>
+                <h3 class="home-category-title">Ojos</h3>
+                <p class="home-category-text">Sombras, delineadores y pestañina para miradas que enamoran.</p>
+            </a>
+
+            <a href="labios.html" class="home-category-card">
+                <div class="home-category-icon">
+                    <i class="fa-solid fa-lips"></i>
                 </div>
-            </div>
-            <div class="product-card partially-visible">
-                <div class="product-image" style="background-image: url('placeholder_brocha.jpg');"></div>
-                <div class="product-info">
-                    <p class="product-name">Miracle Makeup Bru...</p>
-                    <p class="product-price">Desde $21.000</p>
+                <h3 class="home-category-title">Labios</h3>
+                <p class="home-category-text">Tintas, brillos y labiales hidratantes en tonos perfectos.</p>
+            </a>
+
+            <a href="pijamas.html" class="home-category-card">
+                <div class="home-category-icon">
+                    <i class="fa-solid fa-moon"></i>
                 </div>
-            </div>
+                <h3 class="home-category-title">Pijamas & comfy</h3>
+                <p class="home-category-text">Batas térmicas y conjuntos suaves para noches súper cozy.</p>
+            </a>
+
+            <a href="accesorios.html" class="home-category-card">
+                <div class="home-category-icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <h3 class="home-category-title">Accesorios</h3>
+                <p class="home-category-text">Pompones, detalles y extras para complementar tu look.</p>
+            </a>
+
+            <a href="lociones.html" class="home-category-card">
+                <div class="home-category-icon">
+                    <i class="fa-solid fa-spray-can-sparkles"></i>
+                </div>
+                <h3 class="home-category-title">Lociones</h3>
+                <p class="home-category-text">Fragancias femeninas, dulces y elegantes para cada día.</p>
+            </a>
         </div>
     </section>
+
+    <!-- SI QUIERES, PUEDES DEJAR ESTE BLOQUE O QUITARLO
+         PORQUE YA TENEMOS LAS CATEGORÍAS ARRIBA
+    <section class="product-showcase">
+        ...
+    </section>
+    -->
 
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-logo">Euforia Boutique.</div>
-            
+
             <div class="footer-columns">
                 <div class="column">
                     <h4>Colecciones</h4>
@@ -129,18 +176,36 @@
                         <input type="email" placeholder="Email">
                         <button>ENVIAR →</button>
                     </div>
-                    <small>Este sitio está protegido por hCaptcha y se aplican la Política de privacidad de hCaptcha y los Términos del servicio.</small>
+                    <small>Este sitio está protegido por hCaptcha y se aplican la Política de privacidad de hCaptcha y
+                        los Términos del servicio.</small>
                 </div>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>© Euforia Boutique 2025</p>
         </div>
     </footer>
-    
+
+    <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <!-- TOAST / NOTIFICACIÓN DE CARRITO -->
+    <div id="toast" class="toast hidden">
+        <span class="toast-icon">✔</span>
+        <span id="toast-message" class="toast-message">
+            Producto agregado al carrito
+        </span>
+    </div>
+
+    <!-- Toast Error -->
+    <div id="toast-error" class="hidden">
+        <span>⚠</span>
+        <span id="toast-error-message">Error</span>
+    </div>
+
     <script src="app.js"></script>
 </body>
+
 </html>
