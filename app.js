@@ -296,7 +296,7 @@ function enviarPedidoWhatsApp() {
         return;
     }
 
-    let mensaje = "¡Hola Lula! Quisiera hacer un pedido de los siguientes productos:\n\n";
+    let mensaje = "¡Hola Euforia! Quisiera hacer un pedido de los siguientes productos:\n\n";
     let total = 0;
 
     carrito.forEach((item) => {
