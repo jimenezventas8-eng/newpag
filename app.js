@@ -17,7 +17,7 @@ const firebaseConfig = {
 let db;
 let allProducts = [];
 let carrito = [];
-const miNumeroWhatsApp = "573222393223"; // 👈 CAMBIA POR TU NÚMERO REAL (con indicativo)
+const miNumeroWhatsApp = "573001234567"; // 👈 CAMBIA POR TU NÚMERO REAL (con indicativo)
 
 // Inicialización de Firebase
 if (typeof firebase !== "undefined") {
@@ -109,6 +109,33 @@ function actualizarInterfazCarrito() {
     }
 }
 
+// --------------------------------------------------------
+// B.1 TOAST / NOTIFICACIÓN BONITA
+// --------------------------------------------------------
+let toastTimeoutId = null;
+
+function showToast(message = "Producto agregado al carrito") {
+    const toast = document.getElementById("toast");
+    const toastMessage = document.getElementById("toast-message");
+    if (!toast || !toastMessage) return; // por si alguna página no tiene el toast
+
+    toastMessage.textContent = message;
+
+    // Reiniciar animación si ya había un timeout activo
+    if (toastTimeoutId) {
+        clearTimeout(toastTimeoutId);
+        toastTimeoutId = null;
+    }
+
+    toast.classList.remove("hidden");
+    toast.classList.add("show");
+
+    toastTimeoutId = setTimeout(() => {
+        toast.classList.remove("show");
+        toast.classList.add("hidden");
+    }, 2000); // 2 segundos visible
+}
+
 // Agregar desde las cards (productos.html)
 window.agregarAlCarrito = function (productoId) {
     const producto = allProducts.find((p) => p.id === productoId);
@@ -128,7 +155,8 @@ window.agregarAlCarrito = function (productoId) {
         }
 
         guardarCarrito();
-        alert(`${producto.name} agregado al carrito.`);
+        // Antes: alert(`${producto.name} agregado al carrito.`);
+        showToast(`"${producto.name}" agregado al carrito`);
     }
 };
 
@@ -292,11 +320,11 @@ function filterAndRenderProducts(area) {
 
 function enviarPedidoWhatsApp() {
     if (carrito.length === 0) {
-        alert("El carrito está vacío. ¡Agrega productos!");
+        showToastError("El carrito está vacío. Agrega productos ❤️");
         return;
     }
 
-    let mensaje = "¡Hola Euforia! Quisiera hacer un pedido de los siguientes productos:\n\n";
+    let mensaje = "¡Hola Lula! Quisiera hacer un pedido de los siguientes productos:\n\n";
     let total = 0;
 
     carrito.forEach((item) => {
@@ -366,3 +394,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+// --------------------------------------------------------
+// B.2 TOAST DE ERROR
+// --------------------------------------------------------
+let toastErrorTimeoutId = null;
+
+function showToastError(message = "Ocurrió un error") {
+    const toast = document.getElementById("toast-error");
+    const msg = document.getElementById("toast-error-message");
+    if (!toast || !msg) return;
+
+    msg.textContent = message;
+
+    if (toastErrorTimeoutId) {
+        clearTimeout(toastErrorTimeoutId);
+        toastErrorTimeoutId = null;
+    }
+
+    toast.classList.remove("hidden");
+    toast.classList.add("show");
+
+    toastErrorTimeoutId = setTimeout(() => {
+        toast.classList.remove("show");
+        toast.classList.add("hidden");
+    }, 2200);
+}
+
