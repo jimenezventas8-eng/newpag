@@ -17,7 +17,7 @@ const firebaseConfig = {
 let db;
 let allProducts = [];
 let carrito = [];
-const miNumeroWhatsApp = "573001234567"; // 👈 CAMBIA POR TU NÚMERO REAL (con indicativo)
+const miNumeroWhatsApp = "573222393223"; // 👈 CAMBIA POR TU NÚMERO REAL (con indicativo)
 
 // Inicialización de Firebase
 if (typeof firebase !== "undefined") {
