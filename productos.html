@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lula. - Productos</title>
+    <title>Euforia - Tienda de Belleza</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
@@ -17,20 +17,24 @@
             <nav class="categories-nav">
                 <ul>
                     <li><a href="index.html">Inicio</a></li> 
-                    <li><a href="#" data-area="Skincare">Skincare</a></li>
-                    <li><a href="#" data-area="Makeup">Makeup</a></li>
+                    <li><a href="#" data-area="Rostro">Rostro</a></li>
                     <li><a href="#" data-area="Ojos">Ojos</a></li>
-                    <li><a href="#" data-area="Cabello">Cabello</a></li>
+                    <li><a href="#" data-area="Labios">Labios</a></li>
+                    <li><a href="#" data-area="Cejas">Cejas</a></li>
                     <li><a href="#" data-area="Brochas">Brochas</a></li>
-                    <li><a href="#" data-area="Tools">Tools</a></li>
+                    <li><a href="#" data-area="Pijamas">Pijamas</a></li>
+                    <li><a href="#" data-area="Accesorios">Accesorios</a></li>
+                    <li><a href="#" data-area="Lociones">Lociones</a></li>
                 </ul>
             </nav>
-            <div class="logo">Lula.</div>
+            <div class="logo">Euforia Boutique.</div>
             <div class="icon-links">
                 <a href="#" class="new-tag">NUEVO</a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-regular fa-user"></i></a>
-                <a href="#" id="cart-icon"><i class="fa-solid fa-bag-shopping"></i> (<span id="cart-count">0</span>)</a>
+                <!-- <a href="#"><i class="fa-regular fa-user"></i></a> -->
+                <a href="#" id="cart-icon">
+                    <i class="fa-solid fa-bag-shopping"></i> (<span id="cart-count">0</span>)
+                </a>
             </div>
         </div>
     </header>
@@ -45,8 +49,7 @@
     <div id="cart-sidebar" class="cart-sidebar">
         <button id="close-cart-btn" class="close-btn"><i class="fa-solid fa-xmark"></i></button>
         <h3>🛒 Tu Carrito</h3>
-        <div id="cart-items-list" class="cart-items-list">
-            </div>
+        <div id="cart-items-list" class="cart-items-list"></div>
         <div class="cart-summary">
             <p>Subtotal: <span id="cart-total">$0</span></p>
             <button id="whatsapp-order-btn" class="cta-button">Enviar Pedido por WhatsApp</button>
@@ -55,17 +58,19 @@
     
     <footer class="main-footer">
         <div class="footer-content">
-            <div class="footer-logo">Lula.</div>
+            <div class="footer-logo">Euforia Boutique.</div>
             <div class="footer-columns">
                 <div class="column">
                     <h4>Colecciones</h4>
                     <ul>
-                        <li><a href="#">Tools</a></li>
-                        <li><a href="#">Accesorios</a></li>
-                        <li><a href="#">Makeup</a></li>
-                        <li><a href="#">Brochas</a></li>
-                        <li><a href="#">Cabello</a></li>
-                        <li><a href="#">Skincare</a></li>
+                        <li><a href="rostro.html">Rostro</a></li>
+                        <li><a href="ojos.html">Ojos</a></li>
+                        <li><a href="labios.html">Labios</a></li>
+                        <li><a href="cejas.html">Cejas</a></li>
+                        <li><a href="brochas.html">Brochas</a></li>
+                        <li><a href="pijamas.html">Pijamas</a></li>
+                        <li><a href="accesorios.html">Accesorios</a></li>
+                        <li><a href="lociones.html">Lociones</a></li>
                     </ul>
                 </div>
                 <div class="column">
@@ -82,7 +87,7 @@
                     <h4>Sobre nosotros</h4>
                     <p>Visítanos en:</p>
                     <p>📍 Medellín, C.C. Florida - Local 1240 / Etapa 2.</p>
-                    <p>Somos una marca by **Atenea Profesional.**</p>
+                    <p>Somos una marca by <strong>Atenea Profesional.</strong></p>
                 </div>
                 <div class="column subscribe">
                     <h4>Suscríbete</h4>
@@ -96,7 +101,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© Lula Beauty 2025 - Tecnología de Shopify</p>
+            <p>© EuforiaBoutique 2025</p>
         </div>
     </footer>
     
