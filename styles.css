@@ -1,4 +1,6 @@
-/* Variables para colores clave */
+/* =======================================================
+   VARIABLES DE COLOR
+   ======================================================= */
 :root {
     --primary-color: #7b4fbc; 
     --secondary-color: #e5bfff; 
@@ -8,7 +10,9 @@
     --light-grey: #f0f0f0;
 }
 
-/* Estilos Globales y Reset Básico */
+/* =======================================================
+   RESET / BASE
+   ======================================================= */
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +23,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: var(--text-dark);
     line-height: 1.6;
+    background-color: #fff;
 }
 
 a {
@@ -30,7 +35,16 @@ ul {
     list-style: none;
 }
 
-/* 1. Encabezado */
+/* Contenedor genérico */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* =======================================================
+   HEADER Y NAVEGACIÓN
+   ======================================================= */
 .main-header {
     border-bottom: 1px solid var(--light-grey);
     padding: 10px 0;
@@ -43,23 +57,27 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    gap: 20px;
 }
 
 .logo {
     font-size: 30px;
     font-weight: bold;
     color: var(--primary-color);
+    white-space: nowrap;
 }
 
 .categories-nav ul {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .categories-nav a {
     font-size: 14px;
     padding: 5px 0;
     transition: color 0.3s;
+    white-space: nowrap;
 }
 
 .categories-nav a:hover {
@@ -84,6 +102,7 @@ ul {
     font-size: 12px;
     font-weight: bold;
     border-radius: 4px;
+    white-space: nowrap;
 }
 
 .icon-links a i {
@@ -91,7 +110,9 @@ ul {
     color: #555;
 }
 
-/* 2. Banner Principal (Hero - index.html) */
+/* =======================================================
+   HERO (index)
+   ======================================================= */
 .hero-banner {
     background-color: var(--secondary-color);
     padding: 60px 0;
@@ -105,6 +126,7 @@ ul {
     display: flex;
     align-items: stretch; 
     min-height: 450px;
+    gap: 20px;
 }
 
 .hero-image-container {
@@ -146,6 +168,8 @@ ul {
     border-radius: 4px;
     width: fit-content;
     transition: background-color 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
 .cta-button:hover {
@@ -166,8 +190,11 @@ ul {
     border-radius: 15px;
 }
 
-/* 3. Sección de Productos */
-.product-showcase, .products-container {
+/* =======================================================
+   LISTADOS DE PRODUCTOS
+   ======================================================= */
+.product-showcase, 
+.products-container {
     max-width: 1300px;
     margin: 60px auto;
     padding: 0 20px;
@@ -193,11 +220,13 @@ ul {
     text-align: center;
 }
 
+/* grid estático del home */
 .static-grid {
     display: flex;
     border-top: 1px solid var(--light-grey);
     border-left: 1px solid var(--light-grey);
     gap: 0;
+    overflow: hidden;
 }
 
 .static-grid .product-card {
@@ -219,12 +248,20 @@ ul {
     height: 300px;
 }
 
+/* tarjeta genérica */
 .product-card {
     background-color: var(--light-grey);
     border-radius: 8px;
     overflow: hidden;
     padding: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-link {
+    display: block;
 }
 
 .product-image {
@@ -258,13 +295,92 @@ ul {
     margin-top: 10px;
     width: 100%;
     transition: background-color 0.3s;
+    font-size: 0.95em;
 }
 
 .add-to-cart-btn:hover {
     background-color: #6a3ca8;
 }
 
-/* 4. Pie de Página (Footer) */
+/* Mensajes */
+.error-message,
+.info-message {
+    text-align: center;
+    padding: 40px 0;
+    color: #777;
+}
+
+/* =======================================================
+   PÁGINA DE DETALLE DE PRODUCTO
+   ======================================================= */
+.product-details-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px 60px;
+}
+
+.product-page-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.product-image-large {
+    width: 50%;
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+}
+
+.product-info-panel {
+    width: 50%;
+}
+
+.product-info-panel h1 {
+    font-size: 2.4em;
+    margin-bottom: 15px;
+}
+
+.product-price-big {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #ff69b4;
+    margin: 10px 0 20px 0;
+}
+
+.product-description {
+    font-size: 1.05em;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.product-info-panel label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+#cantidad {
+    width: 90px;
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.product-info-panel .add-to-cart-btn,
+.product-info-panel .cta-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* =======================================================
+   FOOTER
+   ======================================================= */
 .main-footer {
     background-color: var(--primary-color);
     color: var(--text-light);
@@ -304,6 +420,10 @@ ul {
     transition: text-decoration 0.3s;
 }
 
+.column a:hover {
+    text-decoration: underline;
+}
+
 .subscribe-form {
     display: flex;
     align-items: center;
@@ -339,12 +459,15 @@ ul {
     color: rgba(255, 255, 255, 0.6);
 }
 
-/* Estilos para el Carrito (Sidebar) */
+/* =======================================================
+   CARRITO (SIDEBAR)
+   ======================================================= */
 .cart-sidebar {
     position: fixed;
     top: 0;
     right: 0;
     width: 350px;
+    max-width: 100%;
     height: 100%;
     background-color: white;
     box-shadow: -3px 0 15px rgba(0,0,0,0.2);
@@ -415,4 +538,217 @@ ul {
 
 .cart-summary .cta-button {
     width: 100%;
+}
+
+/* =======================================================
+   RESPONSIVE
+   ======================================================= */
+
+/* Tablets grandes / laptops pequeños */
+@media (max-width: 1024px) {
+    .hero-content {
+        min-height: 380px;
+    }
+
+    .hero-text-container h1 {
+        font-size: 3em;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .product-image-large {
+        height: 420px;
+    }
+}
+
+/* Tablets y móviles en horizontal */
+@media (max-width: 768px) {
+    .top-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .categories-nav ul {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .icon-links {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;
+        min-height: auto;
+        padding: 0 20px;
+    }
+
+    .hero-image-container {
+        padding-top: 0;
+    }
+
+    .hero-text-container {
+        padding: 20px 0 30px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-text-container h1 {
+        font-size: 2.6em;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .static-grid {
+        flex-wrap: wrap;
+        border-left: none;
+        border-top: none;
+    }
+
+    .static-grid .product-card {
+        flex: 1 1 50%;
+        border: 1px solid var(--light-grey);
+    }
+
+    .footer-columns {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    .footer-logo {
+        text-align: center;
+    }
+
+    .product-page-container {
+        flex-direction: column;
+    }
+
+    .product-image-large,
+    .product-info-panel {
+        width: 100%;
+    }
+
+    .product-image-large {
+        height: 380px;
+    }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero-banner {
+        padding: 40px 0 30px;
+    }
+
+    .hero-text-container h1 {
+        font-size: 2.2em;
+    }
+
+    .hero-text-container p {
+        font-size: 1em;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .product-showcase, 
+    .products-container,
+    .product-details-section {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+
+    .section-title {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .cart-sidebar {
+        width: 100%;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-image-large {
+        height: 320px;
+    }
+
+    .product-info-panel h1 {
+        font-size: 2em;
+    }
+
+    .product-price-big {
+        font-size: 1.8em;
+    }
+}
+
+/* ==== Imágenes en las cards de productos (listado) ==== */
+.product-image-wrapper {
+    width: 100%;
+    height: 250px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-tag {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ==== Imagen grande en la página de detalle ==== */
+.product-image-large-wrapper {
+    width: 50%;
+    max-width: 600px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-large-tag {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Responsive detalle */
+@media (max-width: 768px) {
+    .product-image-large-wrapper {
+        width: 100%;
+        height: 380px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-image-large-wrapper {
+        height: 320px;
+    }
 }
